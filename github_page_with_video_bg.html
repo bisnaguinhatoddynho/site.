@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boas-vindas Davi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Vídeo de fundo */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .links {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1.3rem;
+    }
+
+    .link-item img {
+      width: 32px;
+      height: 32px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    #clock {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vídeo de Fundo -->
+  <video id="bg-video" autoplay muted loop>
+    <source src="porco-palmeiras.mp4" type="video/mp4">
+  </video>
+
+  <div class="content">
+    <div id="clock">00:00:00</div>
+    <h2>Boas vindas, Davi! Qual a boa de hoje?</h2>
+
+    <div class="links">
+      <div class="link-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" />
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+      </div>
+
+      <div class="link-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" />
+        <a href="https://wa.me/" target="_blank">WhatsApp</a>
+      </div>
+
+      <div class="link-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" />
+        <a href="https://classroom.google.com" target="_blank">Google Classroom</a>
+      </div>
+
+      <div class="link-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968523.png" />
+        <a href="https://drive.google.com" target="_blank">Google Drive</a>
+      </div>
+
+      <div class="link-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" />
+        <a href="https://tiktok.com" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function atualizarRelogio() {
+      const agora = new Date();
+      const opcoes = { timeZone: 'America/Sao_Paulo', hour12: false };
+      const hora = agora.toLocaleTimeString('pt-BR', opcoes);
+      document.getElementById("clock").textContent = hora;
+    }
+    setInterval(atualizarRelogio, 1000);
+    atualizarRelogio();
+  </script>
+
+</body>
+</html>
